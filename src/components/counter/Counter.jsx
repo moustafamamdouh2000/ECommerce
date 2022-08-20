@@ -1,23 +1,17 @@
 import './Counter.css';
-import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import CounterActions from './CounterActions';
 import Count from './Count';
 import './Counter.css';
+import { incrementCounter, decrementCounter } from '../../redux/counterSlice';
 function Counter() {
-  const [counter, setCounter] = useState(0);
+  const dispatch = useDispatch();
+  const counter = useSelector((state) => state.counterReducer.counter);
   const increment = () => {
-    if (counter === 99) {
-      setCounter(0);
-      return;
-    }
-    setCounter(counter + 1);
+    dispatch(incrementCounter(1));
   };
   const decrement = () => {
-    if (counter === 0) {
-      setCounter(99);
-      return;
-    }
-    setCounter(counter - 1);
+    dispatch(decrementCounter(1));
   };
   return (
     <div className="App">

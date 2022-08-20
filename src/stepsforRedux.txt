@@ -1,0 +1,26 @@
+
+// _________________REDUX_FOLDER____________________________
+
+
+// install redux toolkit & react-redux              == done
+
+// create store                                     == done
+
+// provider                                         == done
+ 
+// create counter (redux) file                      == done
+
+// counter state                                    == done
+
+// counter Slice (name,initialState,reducers)       == done
+
+// extract counter actions                          == done
+
+// connect reducer with store                       == done
+
+
+// _________________COMPONENT____________________________
+
+// access global state   (useSelector)              == done
+
+// dispatch action from redux  (useDispatach)       == done
