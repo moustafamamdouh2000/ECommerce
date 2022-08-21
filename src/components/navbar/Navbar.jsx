@@ -23,6 +23,9 @@ function NavBar() {
             <Link className="item" to="/shop">
               Shop
             </Link>
+            <Link className="item" to="/register">
+              Sign Up
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
