@@ -11,7 +11,7 @@ import Signuphook from './components/signupHook/Signuphook';
 function App() {
   return (
     <BrowserRouter>
-      <HashRouter>
+      <HashRouter basename="/">
         <NavBar />
         <Routes>
           <Route path="/counter" element={<Counter />} />
