@@ -4,6 +4,41 @@
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
-.navbar-collapse{
-    margin-left: 500px;
+
+.brand {
+    color: white !important;
+    text-decoration: none;
+}
+
+.brand:hover {
+    color: #0d6efd !important;
+}
+
+.navbar-collapse {
+    margin-left: 2%;
+}
+
+.cart-info {
+    cursor: pointer;
+    display: flex;
+    margin: 0;
+    gap: 1rem;
+}
+
+.cart-info:hover {
+    color: #0d6efd;
+}
+
+.cart-info p {
+    margin: 0;
+    padding-top: .8rem;
+}
+
+.icon {
+    margin-top: 1rem;
+}
+
+.navbar {
+    background-color: black;
+    color: white;
 }

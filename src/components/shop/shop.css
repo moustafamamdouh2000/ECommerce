@@ -1,4 +1,4 @@
-.product{
+.product {
     width: 30%;
     display: flex;
     flex-direction: column;
@@ -7,22 +7,27 @@
     cursor: pointer;
     border: 1px solid powderblue;
 }
-.test{
+
+.test {
     justify-content: center;
 }
-.product .img{
+
+.product .img {
     display: flex;
     justify-content: center;
 }
-.product .im{
+
+.product .im {
     padding-top: 10px;
     width: 23%;
 }
-.product .category {
-    text-align: left;
+
+.product .title {
+    text-align: center;
     padding-left: 1rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
 .product .price {
     text-align: center;
     font-size: 1rem;

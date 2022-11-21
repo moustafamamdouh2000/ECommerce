@@ -11,7 +11,7 @@ const schema = yup
       .min(8, 'must be at least 8 character long')
       .matches(
         '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})',
-        'password must contain 1 lc 1 uc 1 num and 1 special char'
+        'password must contain 1 Lower Case 1 Upper Case 1 number and 1 special character'
       ),
     UserName: yup.string().required('UserName is required'),
     Phone: yup
@@ -38,6 +38,7 @@ function Signuphook() {
     handleSubmit,
     formState: { errors },
   } = useForm({
+    mode:'onBlur',
     resolver: yupResolver(schema),
   });
   const submitValues = (data) => console.log(data);

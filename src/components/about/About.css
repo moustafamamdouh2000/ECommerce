@@ -1,0 +1,152 @@
+.main {
+    background-image: url('../../Assets/BG.jpg');
+    height: 50vh;
+    text-align: center;
+}
+
+.contacts {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ================ Mobile First ================ */
+
+/* Any other smaller devices */
+body {
+    background: brown;
+}
+
+/* Mobile */
+@media (min-width: 425px) {
+    body {
+        background: yellow;
+    }
+
+    .skills {
+        color: white;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .hero {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url('../../Assets/asset1.jpeg');
+        height: 30rem;
+    }
+
+    .work-links {
+        cursor: pointer;
+        display: flex;
+        gap: 2rem;
+        margin: 2rem 0 0 14rem;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: white;
+    }
+
+    .lnked-link,
+    .github-link {
+        text-decoration: none;
+        color: white
+    }
+
+    .abt-me {
+        padding-left: 10rem;
+        padding-top: 4rem;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 600;
+        width: fit-content;
+    }
+
+    .lorem-1 {
+        padding-left: 40rem
+    }
+
+    .test-button {
+        margin-left: 40rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        padding: 0.6rem 4rem 0.6rem 4rem;
+        border-radius: 0.3rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: #bab0b0;
+    }
+
+    .grey {
+        background-color: grey;
+        padding: 5rem;
+        border-radius: .3rem;
+    }
+
+    .black {
+        background-color: rgb(55, 52, 52);
+        color: white;
+        padding: 5rem;
+        border-radius: .3rem;
+    }
+
+    .btn-top {
+        background-color: cornflowerblue;
+        border-radius: 1rem;
+        color: black;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .link-top {
+        color: white;
+        text-decoration: none;
+    }
+
+    .link-top:hover {
+        color: black;
+    }
+
+    .footer {
+        text-align: center;
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    body {
+
+        background: purple;
+    }
+
+}
+
+/* Labtop */
+@media (min-width: 1024px) {
+    body {
+        background: cyan;
+    }
+}
+
+/* Labtop L*/
+@media (min-width: 1440px) {
+    body {
+        background: green;
+    }
+}
+
+/* Full HD */
+@media (min-width: 2560px) {
+    body {
+        background: blue;
+    }
+}
+
+/* Ultra HD */
+@media (min-width: 3840px) {
+    body {
+        background: red;
+    }
+}

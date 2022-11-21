@@ -10,18 +10,16 @@ import { BrowserRouter, Route, Routes, HashRouter } from 'react-router-dom';
 import Signuphook from './components/signupHook/Signuphook';
 function App() {
   return (
-    <BrowserRouter>
       <HashRouter basename="/">
         <NavBar />
         <Routes>
-          <Route path="/counter" element={<Counter />} />
+          {/* <Route path="/counter" element={<Counter />} /> */}
           <Route path="/about" element={<About />} />
           <Route path="/home" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/register" element={<Signuphook />} />
         </Routes>
       </HashRouter>
-    </BrowserRouter>
   );
 }
 
