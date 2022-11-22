@@ -33,3 +33,13 @@
     font-size: 1rem;
     font-weight: bold;
 }
+
+.shop-header {
+    text-align: center;
+}
+
+@media (max-width: 800px) {
+    .test {
+        columns: 3;
+    }
+}

@@ -1,0 +1,42 @@
+.contact-header {
+    text-align: center;
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 50vh;
+}
+
+.contact-user-info {
+    width: 80vh;
+    margin: 1rem auto;
+}
+
+.contact-user-info .col-12 {
+    text-align: center;
+}
+
+
+
+.contact-footer {
+    width: 100vw;
+    background-color: #212934;
+    height: 40vh;
+    color: white;
+    padding-top: 1rem;
+}
+
+.contact-site-name {
+    color: #59ab6e;
+}
+
+.contact-footer-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.contact-about-link,
+.contact-about-shop {
+    text-decoration: none;
+    color: white;
+}

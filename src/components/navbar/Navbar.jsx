@@ -8,7 +8,7 @@ import { BsCart } from 'react-icons/bs';
 function NavBar() {
   const cart_counter = useSelector((state) => state.counterReducer.counter)
   return (
-    <Navbar collapseOnSelect expand="lg" className="navbar" variant="dark">
+    <Navbar collapseOnSelect className='sticky-top' expand="lg" variant="dark" sticky='top'>
       <Container>
         <Navbar.Brand href="/home#/home"> <a className="brand" href="/home#/home">E-Commerce</a></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -17,24 +17,19 @@ function NavBar() {
             <Link className="item" to="/home">
               Home
             </Link>
-            <Link className="item" to="/about">
-              About
+            <Link className="item" to="/contact-us">
+              Contact Us
             </Link>
-            {/* <Link className="item" to="/counter">
-              Counter
-            </Link> */}
             <Link className="item" to="/shop">
               Shop
             </Link>
-            <Link className="item" to="/register">
-              Sign Up
+            <Link className="item" to="/login">
+              Account
+            </Link>
+            <Link to='/cart'>
+              <BsCart className='icon' /> {cart_counter}
             </Link>
           </Nav>
-          {/* add cart icon */}
-          <div className='cart-info'>
-            <BsCart className='icon' />
-            <p>{cart_counter}</p>
-          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>

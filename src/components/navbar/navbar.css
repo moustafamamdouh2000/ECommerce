@@ -25,20 +25,34 @@
     gap: 1rem;
 }
 
-.cart-info:hover {
+.cart-info:hover,
+.navbar-nav a:last-child:hover {
     color: #0d6efd;
 }
 
-.cart-info p {
-    margin: 0;
-    padding-top: .8rem;
+.navbar-nav a:last-child {
+    margin-left: 40vw;
+    text-decoration: none;
+    color: white
 }
 
 .icon {
-    margin-top: 1rem;
+    margin-top: 1.2rem;
 }
 
 .navbar {
     background-color: black;
     color: white;
+    box-shadow: 0 0.5rem 1rem rgb(0, 0, 0, .2);
+}
+
+.navbar-nav {
+    margin-right: 0 !important;
+    width: 100vw;
+}
+
+@media (max-width: 990px) {
+    .navbar .navbar-nav a:last-child {
+        margin-left: 2rem;
+    }
 }
