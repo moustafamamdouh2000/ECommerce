@@ -1,6 +1,5 @@
 import './About.css';
-import { AiFillLinkedin } from 'react-icons/ai';
-import { AiFillGithub } from 'react-icons/ai';
+import { AiFillLinkedin, AiOutlineCoffee, AiFillGithub } from 'react-icons/ai';
 function About() {
   const scrollToTop = () => {
     window.scrollTo(0, 0)
@@ -16,11 +15,12 @@ function About() {
       <div className="work-links">
         <a className='lnked-link' href="https://www.linkedin.com/in/moustafa-sabry/" target={'_blank'}>Linked In         <AiFillLinkedin className='lnked-icon' /></a>
         <a className='github-link' href="https://github.com/moustafamamdouh2000" target={'_blank'}>GitHub         <AiFillGithub className='github-icon' /></a>
+        <a className='github-link' href="" target={'_blank'}>Buy Me A Coffee         <AiOutlineCoffee className='coffee-icon' /></a>
       </div>
     </div>
-    <div>
-      <h1 className='abt-me'>About me</h1>
-      <p className="text-sm-start text-md-start text-lg-start text-wrap lorem-1">
+    <div className='about-me-div'>
+      <h1>About me</h1>
+      <p className="text-sm-start text-md-start text-lg-start" style={{ textAlign: "center" }}>
         Studied at AAST , expereince in HTML & CSS ,javascript. currently learning
         angular,Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, molestias.
       </p>

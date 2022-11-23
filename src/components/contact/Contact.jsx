@@ -1,9 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import Footer from '../contact/Footer'
 import './Contact.css'
-import { BsFillPinMapFill } from 'react-icons/bs'
-import { MdEmail } from 'react-icons/md'
-import { AiFillPhone } from 'react-icons/ai'
 function Contact() {
     const scrollToTop = () => {
         window.scrollTo(0, 0)
@@ -41,27 +38,7 @@ function Contact() {
                     </div>
                 </form>
             </div>
-            <div className='contact-footer row'>
-                <div className='contact-footer-container col-3'>
-                    <h1 className='contact-site-name'>E-Commerce</h1>
-                    <hr />
-                    <h4><BsFillPinMapFill />location</h4>
-                    <h4><MdEmail />email</h4>
-                    <h4><AiFillPhone />Phone</h4>
-                </div>
-                <div className='contact-footer-container col-3'>
-                    <h1>Products
-                    </h1>
-                    <hr />
-                    <h4><Link className='contact-about-shop' to='/shop'>Shop</Link></h4>
-                </div>
-                <div className='contact-footer-container col-3'>
-                    <h1>Further Info
-                    </h1>
-                    <hr />
-                    <h4><Link className='contact-about-link' to='/about' onClick={scrollToTop}>About Developer</Link></h4>
-                </div>
-            </div>
+            <Footer></Footer>
         </div>
     )
 }

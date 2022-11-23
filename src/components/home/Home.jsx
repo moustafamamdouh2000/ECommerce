@@ -1,11 +1,13 @@
 import './home.css';
+import Footer from '../contact/Footer'
 import Carousel from 'react-bootstrap/Carousel';
 import { useSelector } from 'react-redux';
+import { FormText } from 'react-bootstrap';
 function Home() {
   const counter = useSelector((state) => state.counterReducer.counter);
   return (
     <div className='home-container'>
-      <Carousel className='home-banners'>
+      <Carousel variant="dark" className='home-banners'>
         <Carousel.Item>
           <img
             className="d-block w-100"
@@ -44,12 +46,7 @@ function Home() {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <div className="footer" style={{ textAlign: 'center', fontSize: '2rem', paddingTop: '2rem' }}>
-        <p>
-          Buy me a Coffee <br />
-          {/* {counter} $ donated so far ! */}
-        </p>
-      </div>
+      <Footer></Footer>
     </div>
   );
 }

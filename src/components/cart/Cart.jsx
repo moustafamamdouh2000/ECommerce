@@ -4,7 +4,7 @@ function Cart() {
     // Need state to save the ID's thats clicked on and request them here to fill the cart
     return (
         <div>
-
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste, asperiores!
         </div>
     )
 }
