@@ -1,6 +1,7 @@
 import './About.css';
 import { AiFillLinkedin, AiOutlineCoffee, AiFillGithub } from 'react-icons/ai';
-function About() {
+function About({ test }) {
+  console.log(test);
   const scrollToTop = () => {
     window.scrollTo(0, 0)
   }
@@ -170,30 +171,36 @@ function About() {
       <h1 class="ps-5 pt-5 pb-5 text-start">Some of my works</h1>
       <div class="row justify-content-center">
         <div class="col-3 grey m-3">
-          <h4>Header4</h4>
-          <h5>Lorem ipsum dolor sit amet.</h5>
+          <h4>SICXE Assembler</h4>
+          <h5>Assembler made with python</h5>
+          <h6><a href="https://github.com/moustafamamdouh2000/SICXE-Assembler">Link</a></h6>
         </div>
         <div class="col-3 black m-3">
-          <h4>Header4</h4>
-          <h5>Lorem ipsum dolor sit amet.</h5>
+          <h4>Math Hero Game</h4>
+          <h5>fun game made with c++ with</h5>
+          <h6><a href="https://github.com/moustafamamdouh2000/MathHero-OpenGL">Link</a></h6>
         </div>
         <div class="col-3 grey m-3">
-          <h4>Header4</h4>
-          <h5>Lorem ipsum dolor sit amet.</h5>
+          <h4>Image Processing API </h4>
+          <h5>Project made for FWD courses, using nodejs</h5>
+          <h6><a href="https://github.com/moustafamamdouh2000/Image-Processing-API">Link</a></h6>
         </div>
       </div>
       <div class="row justify-content-center">
         <div class="col-3 black m-3">
-          <h4>Header4</h4>
-          <h5>Lorem ipsum dolor sit amet.</h5>
+          <h4>Donors Predictor</h4>
+          <h5>Project made for FWD cross-skilling course with python and sklearn</h5>
+          <h6><a href="https://github.com/moustafamamdouh2000/cd0025-supervised-learning">Link</a></h6>
         </div>
         <div class="col-3 grey m-3">
-          <h4>Header4</h4>
-          <h5>Lorem ipsum dolor sit amet.</h5>
+          <h4>Exploding Distors</h4>
+          <h5>Fun tableround game to play with friends, created with javascript and scoket io</h5>
+          <h6><a href="https://github.com/moustafamamdouh2000/Exploding-Distros">Link</a></h6>
         </div>
         <div class="col-3 black m-3">
-          <h4>Header4</h4>
-          <h5>Lorem ipsum dolor sit amet.</h5>
+          <h4>Digital Lock system</h4>
+          <h5>Lock system made with AVR drivers and simulated with proteus</h5>
+          <h6><a href="https://github.com/moustafamamdouh2000/Digital-Lock-System">Link</a></h6>
         </div>
       </div>
     </div>
@@ -202,6 +209,7 @@ function About() {
         <a className='link-top'>To Top</a>
       </button>
     </div>
+
   </div>;
 }
 

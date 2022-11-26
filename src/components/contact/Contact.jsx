@@ -9,7 +9,7 @@ function Contact() {
         <div>
             <div className='contact-header'>
                 <h1>Contact Us</h1>
-                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <p>Here is how to reach us !</p>
             </div>
             <div id="map-container-google-1" className="z-depth-1-half map-container contact-map">
                 <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
