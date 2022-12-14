@@ -31,7 +31,9 @@ const schema = yup
     Gender: yup.string().required('Please select your gender'),
   })
   .required();
-
+const handleSubmitt = () => {
+  //call backend 
+}
 function Signuphook() {
   const {
     register,
