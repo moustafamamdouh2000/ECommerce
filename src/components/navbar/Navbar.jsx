@@ -5,10 +5,29 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { BsCart } from 'react-icons/bs';
+import { useState, useEffect } from 'react';
+
 function NavBar() {
   const cart_counter = useSelector((state) => state.counterReducer.counter)
+  //navbar scroll when active state
+  const [navbar, setNavbar] = useState(false)
+  //navbar scroll changeBackground function
+  const changeBackground = () => {
+    if (window.scrollY >= 1) {
+      setNavbar(true)
+    } else {
+      setNavbar(false)
+    }
+  }
+
+  useEffect(() => {
+    changeBackground()
+
+    window.addEventListener("scroll", changeBackground)
+  })
+
   return (
-    <Navbar collapseOnSelect className='sticky-top' expand="lg" variant="dark" sticky='top'>
+    <Navbar className={navbar ? "navbar active" : "navbar"} collapseOnSelect expand="lg" variant="dark" sticky='top'>
       <Container>
         <Navbar.Brand href="/home#/home"> <a className="brand" href="/home#/home">E-Commerce</a></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -26,7 +45,7 @@ function NavBar() {
             <Link className="item" to="/login">
               Account
             </Link>
-            <Link to='/cart'>
+            <Link className="item" to='/cart'>
               <BsCart className='icon' /> {cart_counter}
             </Link>
           </Nav>

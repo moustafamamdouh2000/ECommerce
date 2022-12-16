@@ -10,20 +10,20 @@ function Footer() {
     }
     return (
         <div className='contact-footer row'>
-            <div className='contact-footer-container col-3'>
+            <div className='contact-footer-container'>
                 <h1 className='contact-site-name'>E-Commerce</h1>
                 <hr />
                 <h4><BsFillPinMapFill />location</h4>
                 <h4><MdEmail />email</h4>
                 <h4><AiFillPhone />Phone</h4>
             </div>
-            <div className='contact-footer-container col-3'>
+            <div className='contact-footer-container'>
                 <h1>Products
                 </h1>
                 <hr />
                 <h4><Link className='contact-about-shop' to='/shop'>Shop</Link></h4>
             </div>
-            <div className='contact-footer-container col-3'>
+            <div className='contact-footer-container'>
                 <h1>Further Info
                 </h1>
                 <hr />

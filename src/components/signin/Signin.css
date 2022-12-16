@@ -34,3 +34,9 @@
     font-weight: 600;
     color: rgb(34, 34, 34);
 }
+
+@media(max-width:420px) {
+    .form-container .Auth-form {
+        width: fit-content !important;
+    }
+}

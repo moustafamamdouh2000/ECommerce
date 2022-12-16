@@ -9,12 +9,12 @@ function Shop() {
   const counter = useSelector((state) => state.counterReducer.counter);
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch('https://api.escuelajs.co/api/v1/products')
+    fetch('https://fakestoreapi.com/products')
       .then((res) => res.json())
       .then((json) => setProducts(json));
   }, []);
   const fetchProduct = (id) => {
-    fetch('https://api.escuelajs.co/api/v1/products/' + id)
+    fetch('https://fakestoreapi.com/products' + id)
       .then((res) => res.json())
       .then((json) => {
         console.log(json)
@@ -24,19 +24,17 @@ function Shop() {
   };
   return (
     <div className="shop-card-groups row">
-      <div className='col-2' style={{ "overflow-wrap": "break-word" }}>
-        <h1 className='shop-header'>Categories</h1>
-      </div>
-      <div className='col-10'>
+      <h2 style={{ "textAlign": "center" }}>welcome to the shop, add items to your cart !</h2>
+      <div className='shop-container'>
         <CardGroup className="test">
           {products.map((product) => {
             return (
-              <div key={randomKey++} className="product" onClick={() => fetchProduct(product.id)}>
+              <div key={randomKey++} className="product" >
                 <div key={randomKey++} className="img">
                   <img
                     key={randomKey++}
                     className="im"
-                    src={require('../../Assets/Headset.jpg')}
+                    src={product.image}
                     alt="some product img"
                   />
                 </div>
@@ -46,6 +44,7 @@ function Shop() {
                 <p key={randomKey++} className="price">
                   {product.price} EGP
                 </p>
+                <button className='product-button' onClick={() => fetchProduct(product.id)}>Add</button>
               </div>
             );
           })}

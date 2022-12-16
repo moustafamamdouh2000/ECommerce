@@ -30,7 +30,7 @@ function App() {
     <HashRouter basename="/">
       <NavBar />
       <Routes>
-        {/* <Route path="/counter" element={<Counter />} /> */}
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/home" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
