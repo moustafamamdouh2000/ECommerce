@@ -7,6 +7,7 @@ import NavBar from './components/navbar/Navbar';
 import Contact from './components/contact/Contact'
 import Signuphook from './components/signupHook/Signuphook';
 import Cart from './components/cart/Cart';
+import Footer from './components/contact/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes, HashRouter } from 'react-router-dom';
 function App() {
@@ -39,6 +40,7 @@ function App() {
         <Route path="/contact-us" element={<Contact />} />
         <Route path="/cart" element={<Cart items={items} />} />
       </Routes>
+      <Footer></Footer>
     </HashRouter>
   );
 }

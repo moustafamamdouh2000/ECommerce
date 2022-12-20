@@ -3,6 +3,9 @@ import Footer from '../contact/Footer'
 import Carousel from 'react-bootstrap/Carousel';
 import { useSelector } from 'react-redux';
 import { FormText } from 'react-bootstrap';
+import { FaTruckMoving } from 'react-icons/fa'
+import { IoMdRefresh } from 'react-icons/io'
+import { BsFillQuestionCircleFill } from 'react-icons/bs'
 function Home() {
   const counter = useSelector((state) => state.counterReducer.counter);
   return (
@@ -47,7 +50,41 @@ function Home() {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <Footer></Footer>
+      <div className='return-items'>
+        <div className='return-items-item'>
+          <div className='return-items-truck truck-icon'>
+            <FaTruckMoving />
+          </div>
+          <div className='return-hidden-icons truck-icon'>
+            <FaTruckMoving />
+            <h3 className='return-items-hidden-header'>Free Shipping</h3>
+          </div>
+          <h3 className='return-items-header'>Free Shipping</h3>
+          <div className='return-items-text'><p>Get free shipping on new orders untill the end of the year !</p></div>
+        </div>
+        <div className='return-items-item'>
+          <div className='return-items-truck refresh-icon'>
+            <IoMdRefresh />
+          </div>
+          <div className='return-hidden-icons refresh-icon'>
+            <IoMdRefresh />
+            <h3 className='return-items-hidden-header'>Free Returns</h3>
+          </div>
+          <h3 className='return-items-header'>Free Returns</h3>
+          <div className='return-items-text'><p>We guarantee a 14 days free return on newly purchased items !</p></div>
+        </div>
+        <div className='return-items-item'>
+          <div className='return-items-truck question-icon'>
+            <BsFillQuestionCircleFill />
+          </div>
+          <div className='return-hidden-icons question-icon'>
+            <BsFillQuestionCircleFill />
+            <h3 className='return-items-hidden-header'>Customer Support</h3>
+          </div>
+          <h3 className='return-items-header'>Customer Support</h3>
+          <div className='return-items-text'><p>Talk to our customer support if you are facing any trouble at any time !</p></div>
+        </div>
+      </div>
     </div>
   );
 }

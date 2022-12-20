@@ -5,7 +5,7 @@
     font-family: 'Oswald', sans-serif;
     font-size: 1.5rem;
     font-weight: 900;
-    padding: 1rem;
+    padding: .5rem 1rem 0 0;
 }
 
 .brand {
@@ -36,9 +36,10 @@
 }
 
 .navbar-nav a:last-child {
-    margin-left: 40vw;
+    margin-left: 35vw;
     text-decoration: none;
     color: black;
+
 }
 
 .icon {
@@ -59,8 +60,13 @@
     /* box-shadow: 0 0.5rem 1rem rgb(0, 0, 0, .2); */
 }
 
+/* .navbar {
+    /* box-shadow: 0 0.5rem 1rem rgb(0, 0, 0, .1); 
+} */
+
 .navbar.active,
-.navbar.active .container a {
+.navbar.active .container a,
+.navbar.active svg {
     background-color: rgb(46, 99, 121);
     color: wheat;
     /* font-family: 'Lobster', cursive; */
@@ -80,6 +86,7 @@
     margin-right: 0 !important;
     /* width: 100vw; */
 }
+
 
 @media (max-width: 990px) {
     .navbar .navbar-nav a:last-child {

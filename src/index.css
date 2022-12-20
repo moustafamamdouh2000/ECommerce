@@ -17,3 +17,22 @@ html,
   width: 100vw;
   background-color: rgb(217, 236, 252);
 }
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  flex: 1%;
+}
+
+.form-container,
+.cart {
+  flex: 100%;
+}
+
+.contact-footer {
+  flex: 100%;
+}

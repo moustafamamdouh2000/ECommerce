@@ -17,9 +17,6 @@
     width: fit-content;
 }
 
-
-
-
 .contact-footer {
     width: 100vw;
     background-color: #212934;
@@ -47,6 +44,8 @@
     margin: 0;
 } */
 
+
+
 .contact-about-link,
 .contact-about-shop {
     text-decoration: none;
@@ -55,6 +54,7 @@
 
 .contact-footer.row {
     margin: 0;
+    padding: 1rem 2rem;
 }
 
 @media (max-width: 775px) {
@@ -76,5 +76,12 @@
 
     .contact-user-info .col-6 {
         margin: 0 auto;
+    }
+}
+
+@media (max-width:1165px) {
+    .contact-footer {
+        /* bottom: 0;
+        position: absolute; */
     }
 }

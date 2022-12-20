@@ -10,6 +10,7 @@ const schema = yup
       .string()
       .required('Email is required')
       .email('Not valid email must contain [@ and .]'),
+    Password: yup.string().required('Password is required')
   })
   .required();
 
@@ -64,7 +65,9 @@ function Signin() {
               type="password"
               className="form-control mt-1"
               placeholder="Enter password"
+              {...register('Password')}
             />
+            <p className="text-danger">{errors?.Password?.message}</p>
           </div>
           <div className="d-grid gap-2 mt-3">
             <button type="submit" className="btn btn-primary">

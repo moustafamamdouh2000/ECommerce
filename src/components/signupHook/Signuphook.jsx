@@ -2,7 +2,6 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import './signupHook.css';
 import * as yup from 'yup';
-
 const schema = yup
   .object({
     Password: yup

@@ -15,9 +15,19 @@
     margin: 0 auto;
 }
 
+.shop-card-groups,
+.shop-container {
+    width: 100vw;
+}
+
+.shop-card-groups {
+    margin: 0 !important;
+}
+
 .test {
     justify-content: center;
 }
+
 
 .product .img {
     display: flex;

@@ -2,3 +2,172 @@
     width: 50vw;
     margin: 0 auto;
 }
+
+.return-items {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+}
+
+.return-items-item {
+    display: flex;
+    flex: 33%;
+    padding: 1rem;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.return-items-truck {
+    align-self: flex-end;
+    flex: 100%;
+    font-size: 2rem;
+    padding-right: 1rem;
+    color: cornflowerblue;
+}
+
+.return-items-header {
+    width: 50%;
+    height: 0;
+    align-self: flex-start;
+    flex: 20%;
+}
+
+.return-items-text {
+    align-self: flex-start;
+    width: 50%;
+    flex: 70%;
+}
+
+.return-hidden-icons {
+    display: none;
+}
+
+@media(max-width:585px) {
+    .return-items {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .return-items-truck {
+        display: none;
+    }
+
+    .return-items-text,
+    .return-items-header {
+        align-self: center;
+    }
+
+    .return-items-header {
+        display: none;
+    }
+
+    .return-hidden-icons {
+        display: flex;
+        font-size: 1.5rem;
+    }
+
+    .return-hidden-icons svg {
+        color: cornflowerblue;
+    }
+
+    .return-items-hidden-header {
+        padding-left: .5rem;
+    }
+
+}
+
+.refresh-icon svg:hover {
+    animation-name: rotation;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.question-icon svg:hover {
+    animation-name: jump;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
+
+@keyframes jump {
+    0% {
+        transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+    }
+
+    40% {
+        transform: translate3d(0, -50%, 0) scale3d(.7, 1.5, 1);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0) scale3d(1.5, 1, 1);
+    }
+}
+
+.truck-icon svg:hover {
+    animation-name: truck;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: backwards;
+    animation-iteration-count: infinite;
+}
+
+@keyframes truck {
+    0% {
+        transform: translateX(-10%);
+    }
+
+    20% {
+        transform: translateX(10%);
+    }
+
+    40% {
+        transform: translateX(20%);
+    }
+
+    60% {
+        transform: translateX(30%);
+    }
+
+    80% {
+        transform: translateX(40%);
+    }
+
+    100% {
+        transform: translateX(50%);
+    }
+
+    /* 
+    60% {
+        transform: translateX(60%);
+    }
+
+    70% {
+        transform: translateX(70%);
+    }
+
+    80% {
+        transform: translateX(80%);
+    }
+    90% {
+        transform: translateX(90%);
+    }
+
+    100% {
+        transform: translateX(90%);
+    } */
+}

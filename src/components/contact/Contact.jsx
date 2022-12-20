@@ -38,7 +38,6 @@ function Contact() {
                     </div>
                 </form>
             </div >
-            <Footer></Footer>
         </div >
     )
 }

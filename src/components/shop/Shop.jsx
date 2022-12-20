@@ -3,23 +3,26 @@ import { useSelector, useDispatch } from 'react-redux';
 import CardGroup from 'react-bootstrap/CardGroup';
 import { useState, useEffect } from 'react';
 import { incrementCounter, decrementCounter } from '../../redux/counterSlice';
+import { addItem } from '../../redux/cartSlice';
 function Shop() {
   let randomKey = 0; // this is just for browser error for each element having unique key
   const dispatch = useDispatch();
   const counter = useSelector((state) => state.counterReducer.counter);
   const [products, setProducts] = useState([]);
+  const items = useSelector(state => state.cartReducer)
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
       .then((res) => res.json())
       .then((json) => setProducts(json));
   }, []);
+
   const fetchProduct = (id) => {
-    fetch('https://fakestoreapi.com/products' + id)
+    fetch('https://fakestoreapi.com/products/' + id)
       .then((res) => res.json())
       .then((json) => {
-        console.log(json)
-        dispatch(incrementCounter(1));
-        console.log(counter);
+        dispatch(incrementCounter(1))
+        dispatch(addItem(json));
+        console.log(items);
       });
   };
   return (
@@ -42,9 +45,9 @@ function Shop() {
                   {product.title}
                 </p>
                 <p key={randomKey++} className="price">
-                  {product.price} EGP
+                  {product.price} €
                 </p>
-                <button className='product-button' onClick={() => fetchProduct(product.id)}>Add</button>
+                <button className='btn btn-primary' onClick={() => fetchProduct(product.id)}>Add</button>
               </div>
             );
           })}

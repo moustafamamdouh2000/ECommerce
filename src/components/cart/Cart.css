@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@600&display=swap');
+
+
+.cart {
+    display: flex;
+}
+
+.text-black {
+    font-family: 'Martian Mono', monospace;
+}
+
+.cart-card-items {
+    background-color: red;
+    flex: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-sidebar {
+    background-color: black;
+    flex: 20%;
+    height: 80%;
+    margin-top: 2rem;
+    z-index: 1;
+}
+
+.h-100.h-custom {
+    height: fit-content !important;
+}
