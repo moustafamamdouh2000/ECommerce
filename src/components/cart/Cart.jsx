@@ -1,11 +1,35 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
-// import Card from 'react-bootstrap/Card';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { clearCounter } from '../../redux/counterSlice';
+import { removeAll } from '../../redux/cartSlice';
 import './Cart.css'
+
 function Cart({ items }) {
+    let no_of_items = 0
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
     let price = 0;
+    const cart_counter = useSelector((state) => state.counterReducer.counter)
     let cartItems = useSelector(state => state.cartReducer)
-    console.log(cartItems.items);
+    const checkCart = () => {
+        //check if user is logged in first,
+        if (localStorage.getItem("loggedIn?")) {
+            //logged in
+            alert('order is added succesfuly !')
+            dispatch(clearCounter())
+            dispatch(removeAll())
+            navigate('../shop')
+        } else {
+            alert("user is not logged in")
+            navigate('../login')
+        }
+        console.log("test");
+    }
+    const addItem = () => {
+
+    }
+
     return (
         <section className="h-100 h-custom" style={{ backgroundColor: '#d2c9ff' }}>
             <div className="container py-5 h-100">
@@ -18,8 +42,11 @@ function Cart({ items }) {
                                         <div className="p-5">
                                             <div className="d-flex justify-content-between align-items-center mb-5">
                                                 <h1 className="fw-bold mb-0 text-black">Shopping Cart</h1>
-                                                <h6 className="mb-0 text-muted">3 items</h6>
+                                                <h6 className="mb-0 text-muted">{cartItems.items.length} items</h6>
                                             </div>
+                                            {
+                                                cartItems.items.length == 0 ? <div style={{ "fontWeight": "bold", "fontSize": "20px" }}>cart is empty</div> : ''
+                                            }
                                             <hr className="my-4" />
                                             {
                                                 cartItems.items.map((item) => {
@@ -36,7 +63,7 @@ function Cart({ items }) {
                                                                 <button className="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                                                                     <i className="fas fa-minus" />
                                                                 </button>
-                                                                <input id="form1" min={0} name="quantity" defaultValue={1} type="number" className="form-control form-control-sm" />
+                                                                <input onChange={console.log(this)} id={no_of_items++} min={0} name="quantity" defaultValue={1} type="number" className="form-control form-control-sm" />
                                                                 <button className="btn btn-link px-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                                                                     <i className="fas fa-plus" />
                                                                 </button>
@@ -66,11 +93,10 @@ function Cart({ items }) {
                                                 <h5>€{
                                                     cartItems.items.map(item => {
                                                         price += item.price
-                                                        console.log(price);
                                                     })
                                                 }{Math.round(price)}</h5>
                                             </div>
-                                            <button type="button" className="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark">Register</button>
+                                            <button onClick={checkCart} type="button" className="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark">Order</button>
                                         </div>
                                     </div>
                                 </div>

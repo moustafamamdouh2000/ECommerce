@@ -11,18 +11,38 @@ function Shop() {
   const [products, setProducts] = useState([]);
   const items = useSelector(state => state.cartReducer)
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
+    //need to fetch the daata here from backend
+    fetch('/getAllData')
       .then((res) => res.json())
       .then((json) => setProducts(json));
+    // fetch('https://fakestoreapi.com/products')
+    //   .then((res) => res.json())
+    //   .then((json) => setProducts(json));
   }, []);
 
   const fetchProduct = (id) => {
-    fetch('https://fakestoreapi.com/products/' + id)
+    //same here we need to get only 1 item
+    fetch('/getSignleData/' + id)
       .then((res) => res.json())
       .then((json) => {
         dispatch(incrementCounter(1))
-        dispatch(addItem(json));
-        console.log(items);
+        // //check for items already exists if its there increase its count
+        // const item_id = json.id;
+        // const found = items.items.some(el => el[0].id === id);
+        // let index = 0;
+        // if (found) {
+        //   items.items.some(function (entry, i) {
+        //     if (entry[0].id == item_id) {
+        //       index = i;
+        //     }
+        //   });
+        // }
+        // else {
+        //   //first time for item.
+        //   // dispatch(addItem([json, 1]));
+        dispatch(addItem(json))
+        console.log(items.items);
+        // }
       });
   };
   return (
@@ -32,7 +52,7 @@ function Shop() {
         <CardGroup className="test">
           {products.map((product) => {
             return (
-              <div key={randomKey++} className="product" >
+              <div key={randomKey++} className="product" style={{ "background-color": "snow" }}>
                 <div key={randomKey++} className="img">
                   <img
                     key={randomKey++}

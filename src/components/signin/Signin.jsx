@@ -1,9 +1,13 @@
 import { useState } from 'react';
 import './Signin.css';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../firebase/config';
+import { useSelector, useDispatch } from 'react-redux';
+import { login } from '../../redux/userSlice';
 const schema = yup
   .object({
     Email: yup
@@ -15,27 +19,27 @@ const schema = yup
   .required();
 
 function Signin() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  // const onNameChange = (e) => {
-  //   setName(e.target.value);
-  // };
-  // const onEmailChange = (e) => {
-  //   setEmail(e.target.value);
-  // };
-  // const onPhoneChange = (e) => {
-  //   setPhone(e.target.value);
-  // };
-  const submitValues = (e) => {
-    e.preventDefault();
-    const data = {
-      name,
-      email,
-      phone,
-    };
-    console.log(data);
-  };
+  const dispatch = useDispatch();
+  let loginStatus = useSelector(state => state.userReducer)
+  const navigate = useNavigate();
+  const [Email, setEmail] = useState('');
+  const [Password, setPassword] = useState('');
+  const submitValues = async (data) => {
+    const { Email, Password, } = data
+    signInWithEmailAndPassword(auth, Email, Password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        alert('logged in succesfuly')
+        dispatch(login());
+        // const serializedState = JSON.stringify(loginStatus.Status)
+        localStorage.setItem('loggedIn?', 'true')
+        navigate('../home', loginStatus.Status)
+      })
+      .catch((error) => {
+        alert('incorrect information')
+      });
+  }
+
   const {
     register,
     handleSubmit,

@@ -1,5 +1,4 @@
 import React from 'react'
-import Footer from '../contact/Footer'
 import './Contact.css'
 function Contact() {
     const scrollToTop = () => {
@@ -19,11 +18,11 @@ function Contact() {
                 <form class="row g-3">
                     <div class="col-md-4">
                         <label for="inputName" class="form-label">Name</label>
-                        <input type="email" class="form-control" id="inputName" />
+                        <input type="email" class="form-control" id="inputName" placeholder="Name" />
                     </div>
                     <div class="col-md-4">
-                        <label for="inputEmail" class="form-label">Email</label>
-                        <input type="text" class="form-control" id="inputEmail" />
+                        <label for="inputEmail" class="form-label" >Email</label>
+                        <input type="text" class="form-control" id="inputEmail" placeholder="Email" />
                     </div>
                     <div class="col-6">
                         <label for="InputSubject" class="form-label">Subject</label>

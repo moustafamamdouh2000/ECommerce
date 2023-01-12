@@ -3,11 +3,14 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { BsCart } from 'react-icons/bs';
 import { useState, useEffect } from 'react';
-
+import { logout } from '../../redux/userSlice';
 function NavBar() {
+  const dispatch = useDispatch()
+  let loginStatus = useSelector(state => state.userReducer)
+  let storagevar = localStorage.getItem('loggedIn?')
   const cart_counter = useSelector((state) => state.counterReducer.counter)
   //navbar scroll when active state
   const [navbar, setNavbar] = useState(false)
@@ -19,13 +22,18 @@ function NavBar() {
       setNavbar(false)
     }
   }
-
+  useEffect(() => {
+    console.log("status changed", loginStatus.Status);
+  }, [loginStatus])
   useEffect(() => {
     changeBackground()
-
     window.addEventListener("scroll", changeBackground)
   })
-
+  const Logout = () => {
+    dispatch(logout())
+    localStorage.removeItem('loggedIn?')
+    console.log('test');
+  }
   return (
     <Navbar className={navbar ? "navbar active" : "navbar"} collapseOnSelect expand="lg" variant="dark" sticky='top'>
       <Container>
@@ -43,7 +51,14 @@ function NavBar() {
               Shop
             </Link>
             <Link className="item" to="/login">
-              Account
+              {
+                localStorage.getItem('loggedIn?') ? '' : 'Account'
+              }
+            </Link>
+            <Link onClick={Logout} className="item" to="/login">
+              {
+                localStorage.getItem('loggedIn?') ? 'Log Out' : ''
+              }
             </Link>
             <Link className="item" to='/cart'>
               <BsCart className='icon' /> {cart_counter}

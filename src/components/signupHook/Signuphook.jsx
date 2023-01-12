@@ -2,6 +2,9 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import './signupHook.css';
 import * as yup from 'yup';
+import { auth } from '../../firebase/config';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 const schema = yup
   .object({
     Password: yup
@@ -27,10 +30,11 @@ const schema = yup
       .string()
       .required('confirm password is required')
       .oneOf([yup.ref('Password'), 'Passwords do not match'], 'Passwords do not match'),
-    Gender: yup.string().required('Please select your gender'),
   })
   .required();
 function Signuphook() {
+
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -39,7 +43,20 @@ function Signuphook() {
     mode: 'onBlur',
     resolver: yupResolver(schema),
   });
-  const submitValues = (data) => console.log(data);
+  const submitValues = async (data) => {
+    const { Email, Password, } = data
+    console.log(data);
+    createUserWithEmailAndPassword(auth, Email, Password)
+      .then((userCredential) => {
+        alert('signed up correctly')
+        navigate('../home')
+        // const user = userCredential.user;
+        // console.log('user logged in');
+      })
+      .catch((error) => {
+        alert('errors in form submission')
+      });
+  };
   return (
     <div className="Auth-form-container">
       <form className="Auth-form" onSubmit={handleSubmit(submitValues)}>
@@ -50,7 +67,7 @@ function Signuphook() {
           <div className="form-group mt-3">
             <label>User Name</label>
             <input
-              type="email"
+              type="text"
               className="form-control mt-1"
               placeholder="e.g Jane Doe"
               {...register('UserName')}
