@@ -1,3 +1,6 @@
+# Some Notes
+You need to add your credential .json file after setting up firebase to run the backend correctly also you must populate firestore with any fake api giving that it provides same object for the frontend to display.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
